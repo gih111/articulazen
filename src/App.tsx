@@ -49,7 +49,7 @@ function App() {
 
     // Timer para mostrar o botão
     const buttonTimer = setupButtonTimer(() => {
-      setShowOfferButton(true);
+      setShowOfferButton(false);
     });
 
     return () => clearTimeout(buttonTimer);
