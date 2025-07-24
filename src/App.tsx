@@ -36,7 +36,7 @@ function App() {
   const [currentNotification, setCurrentNotification] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
   const [currentPage, setCurrentPage] = useState('landing'); // 'landing' ou 'offers'
-  const [showOfferButton, setShowOfferButton] = useState(false);
+  const [showOfferButton, setShowOfferButton] = useState(true);
   const [timeLeft, setTimeLeft] = useState({
     minutes: 8,
     seconds: 32
@@ -46,13 +46,6 @@ function App() {
   useEffect(() => {
     // Carrega o script da VSL
     loadVSLScript();
-
-    // Timer para mostrar o botão
-    const buttonTimer = setupButtonTimer(() => {
-      setShowOfferButton(false);
-    });
-
-    return () => clearTimeout(buttonTimer);
   }, []);
   
   // Despachante de UTM v1.0 - por Lek do Black
