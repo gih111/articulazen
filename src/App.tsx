@@ -84,15 +84,26 @@ function App() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setShowNotification(false);
+    const showNextNotification = () => {
+      // Mostra a notificação
+      setShowNotification(true);
+      
+      // Esconde após 8 segundos
       setTimeout(() => {
-        setCurrentNotification((prev) => (prev + 1) % notifications.length);
-        setShowNotification(true);
-      }, 1500);
-    }, 25000);
+        setShowNotification(false);
+        
+        // Após 2 segundos escondida, muda para a próxima e mostra novamente
+        setTimeout(() => {
+          setCurrentNotification((prev) => (prev + 1) % notifications.length);
+          showNextNotification();
+        }, 2000);
+      }, 8000);
+    };
 
-    return () => clearInterval(interval);
+    // Inicia o ciclo
+    showNextNotification();
+
+    // Não precisa de cleanup pois é recursivo
   }, []);
 
   // Contador regressivo
