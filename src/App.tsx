@@ -10,13 +10,13 @@ import {
   Lock,
   Users,
   TrendingUp,
-  Play,
   Award,
   ChevronUp,
   ChevronDown,
   X,
-  ArrowDown
 } from 'lucide-react';
+import { VSLSection } from './vsl/VSLSection';
+import { loadVSLScript, setupButtonTimer } from './vsl/vslUtils';
 
 // Dados para as notificações
 const notifications = [
@@ -44,16 +44,13 @@ function App() {
 
   // Carrega o script da VSL quando o componente monta
   useEffect(() => {
-    // Carrega o script da VSL diretamente
-    const script = document.createElement('script');
-    script.src = 'https://scripts.converteai.net/04883032-8909-4934-b670-acdef3d1ec63/players/6882458ee82e39bf92b7d0aa/v4/player.js';
-    script.async = true;
-    document.head.appendChild(script);
+    // Carrega o script da VSL
+    loadVSLScript();
 
-    // Timer para mostrar o botão após 2:35 (155 segundos)
-    const buttonTimer = setTimeout(() => {
+    // Timer para mostrar o botão
+    const buttonTimer = setupButtonTimer(() => {
       setShowOfferButton(true);
-    }, 155000); // 155 segundos = 2 minutos e 35 segundos
+    });
 
     return () => clearTimeout(buttonTimer);
   }, []);
@@ -191,43 +188,11 @@ function App() {
           </div>
         </header>
 
-        {/* VÍDEO DE VENDAS (VSL - A HIPNOSE) - FORMATO VERTICAL MOBILE */}
-        <section className="py-8 md:py-16 bg-orange-50">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-orange-800 leading-tight">
-              Se você sente dor ao levantar,
-              <span className="text-orange-600 block md:inline"> eu gravei isso pensando em você.</span>
-            </h2>
-            <div className="relative bg-black rounded-lg overflow-hidden mx-auto" style={{ maxWidth: '320px', aspectRatio: '9/16' }}>
-              <vturb-smartplayer 
-                id="vid-6882458ee82e39bf92b7d0aa" 
-                style={{
-                  display: 'block',
-                  margin: '0 auto',
-                  width: '100%',
-                  maxWidth: '320px'
-                }}
-              ></vturb-smartplayer>
-              <div className="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded text-sm font-bold flex items-center gap-1">
-                <Play className="w-3 h-3" />
-                ASSISTA AGORA
-              </div>
-            </div>
-            
-            {/* BOTÃO PARA MOSTRAR OFERTAS */}
-            <div className="mt-6 md:mt-8">
-              {showOfferButton && (
-                <button 
-                  onClick={handleShowOffers}
-                  className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg md:text-xl transition-all transform hover:scale-105 shadow-lg animate-pulse"
-                >
-                  🔥 QUERO ACABAR COM A DOR AGORA!
-                  <ArrowDown className="w-5 h-5 ml-2 inline-block" />
-                </button>
-              )}
-            </div>
-          </div>
-        </section>
+        {/* VÍDEO DE VENDAS (VSL - A HIPNOSE) */}
+        <VSLSection 
+          showOfferButton={showOfferButton}
+          onShowOffers={handleShowOffers}
+        />
 
         {/* PROBLEMA E AGITAÇÃO (JOGA SAL NA FERIDA) */}
         <section className="py-8 md:py-16 bg-orange-100">
