@@ -100,11 +100,11 @@ function App() {
       setTimeout(() => {
         setShowNotification(false);
         
-        // Após 2 segundos escondida, muda para a próxima e mostra novamente
+        // Após 25 segundos escondida, muda para a próxima e mostra novamente
         setTimeout(() => {
           setCurrentNotification((prev) => (prev + 1) % notifications.length);
           showNextNotification();
-        }, 2000);
+        }, 25000);
       }, 8000);
     };
 
