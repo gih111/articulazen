@@ -245,7 +245,7 @@ function App() {
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-center mb-8 md:mb-12 text-white leading-tight">
               CHEGA DE SOFRER! CONHEÇA O ARTICULAZEN - 
-              <span className="text-orange-100 block md:inline bg-orange-700 px-2 rounded"> A ARMA NATURAL </span>
+              <span className="text-orange-100 block md:inline bg-orange-700 px-2 rounded"> O SUPLEMENTO NATURAL </span>
               CONTRA A INFLAMAÇÃO CRÔNICA
             </h2>
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
