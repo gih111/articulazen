@@ -182,9 +182,6 @@ function App() {
            MÉDICOS EM CHOQUE: Fórmula Natural com Raiz Dourada ajuda a recuperar a mobilidade de forma progressiva. Imagine voltar a caminhar sem dor persistente.
               <span className="text-white block md:inline bg-orange-700 px-2 rounded"> Se você sente dor ao levantar, isso é pra você.</span>
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 opacity-90 max-w-4xl mx-auto">
-              Junte-se aos +27.482 brasileiros que abandonaram os remédios caros e voltaram a viver sem o tormento da dor.
-            </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-base md:text-lg">
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 md:w-6 md:h-6" />
