@@ -256,7 +256,7 @@ function App() {
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <div className="w-full md:w-1/2">
                 <img 
-                  src="https://i.imgur.com/eobjHnm.png" 
+                  src="https://i.imgur.com/Hsh9jMd.png" 
                   alt="Articulazen - Frasco do Produto" 
                   className="w-full max-w-sm mx-auto rounded-lg shadow-2xl"
                 />
