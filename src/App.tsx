@@ -179,8 +179,8 @@ function App() {
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="max-w-6xl mx-auto px-4 relative z-10">
             <h1 className="text-2xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
-           MÉDICOS EM CHOQUE: Fórmula Natural com Raiz Dourada ajuda a recuperar a mobilidade de forma progressiva. Imagine voltar a caminhar sem dor persistente.
-              <span className="text-white block md:inline bg-orange-700 px-2 rounded"> Se você sente dor ao levantar, isso é pra você.</span>
+           MÉDICOS EM CHOQUE: Fórmula Natural com Raiz Dourada ajuda a recuperar a mobilidade de forma progressiva.
+              <span className="text-white block md:inline bg-orange-700 px-2 rounded"> Imagine voltar a caminhar sem dor persistente.</span>
             </h1>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-base md:text-lg">
               <div className="flex items-center gap-2">
