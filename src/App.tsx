@@ -269,7 +269,7 @@ function App() {
                   foi desenvolvida para agir diretamente na fonte da inflamação, como um míssil teleguiado.
                 </p>
                 <p className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">
-                  Ele não remedia, ele <span className="text-orange-100 bg-orange-700 px-2 rounded">RESOLVE</span>.
+                  Ele não remedia, ele <span className="text-orange-100 bg-orange-700 px-2 rounded">RESOLVE</span>.  Garanta seu combo com até 61% de desconto. Tratamentos a partir de apenas 12x de R$ 10,60.
                 </p>
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center gap-3">
