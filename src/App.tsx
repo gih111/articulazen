@@ -179,7 +179,7 @@ function App() {
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="max-w-6xl mx-auto px-4 relative z-10">
             <h1 className="text-2xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
-             "Imagine voltar a fazer suas caminhadas matinais sem aquele desconforto
+             Imagine voltar a fazer suas caminhadas matinais sem aquele desconforto
               <span className="text-white block md:inline bg-orange-700 px-2 rounded"> PERSISTENTE. </span>
               ou A fórmula natural que ajuda a manter o bem-estar das suas
               <span className="text-white block md:inline bg-orange-700 px-2 rounded"> ARTICULAÇÕES.</span>
