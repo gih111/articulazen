@@ -179,9 +179,9 @@ function App() {
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="max-w-6xl mx-auto px-4 relative z-10">
             <h1 className="text-2xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
-             "Imagine voltar a fazer suas caminhadas matinais sem aquele desconforto ou "A fórmula natural que ajuda a manter o bem-estar das suas articulações. 
+             "Imagine voltar a fazer suas caminhadas matinais sem aquele desconforto
               <span className="text-white block md:inline bg-orange-700 px-2 rounded"> persistente. </span>
-              ou "A fórmula natural que ajuda a manter o bem-estar das suas
+              ou A fórmula natural que ajuda a manter o bem-estar das suas
               <span className="text-white block md:inline bg-orange-700 px-2 rounded"> ARTICULAÇÕES.</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 opacity-90 max-w-4xl mx-auto">
