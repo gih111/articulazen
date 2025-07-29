@@ -471,7 +471,7 @@ function App() {
                       loading="eager"
                       fetchpriority="high"
                     />
-                    <p className="text-base md:text-lg text-orange-600 mb-2">Tratamento 3 Meses</p>
+                    <p className="text-base md:text-lg text-orange-600 mb-2">3 Frasco - Tratamento 3 Meses</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 197</p>
                     <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 147,00</p>
                     <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 12,25</p>
