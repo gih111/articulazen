@@ -15,13 +15,15 @@ export const VSLSection: React.FC<VSLSectionProps> = ({ showOfferButton, onShowO
           <span className="text-orange-600 block md:inline"> eu gravei isso pensando em você.</span>
         </h2>
         <div className="relative bg-black rounded-lg overflow-hidden mx-auto" style={{ maxWidth: '320px', aspectRatio: '9/16' }}>
-          <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black flex items-center justify-center">
-            <div className="text-center text-white">
-              <Play className="w-16 h-16 mx-auto mb-4 text-orange-500" />
-              <p className="text-lg font-bold">Vídeo Exclusivo</p>
-              <p className="text-sm opacity-75">Carregando...</p>
-            </div>
-          </div>
+          <vturb-smartplayer 
+            id="vid-6882458ee82e39bf92b7d0aa" 
+            style={{
+              display: 'block',
+              margin: '0 auto',
+              width: '100%',
+              maxWidth: '320px'
+            }}
+          ></vturb-smartplayer>
           <div className="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded text-sm font-bold flex items-center gap-1">
             <Play className="w-3 h-3" />
             ASSISTA AGORA

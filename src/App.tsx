@@ -16,7 +16,7 @@ import {
   X,
 } from 'lucide-react';
 import { VSLSection } from './vsl/VSLSection';
-import { setupButtonTimer } from './vsl/vslUtils';
+import { loadVSLScript, setupButtonTimer } from './vsl/vslUtils';
 
 // Dados para as notificações
 const notifications = [
@@ -35,6 +35,18 @@ const notifications = [
 function App() {
   const [currentNotification, setCurrentNotification] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
+  const [currentPage, setCurrentPage] = useState('landing'); // 'landing' ou 'offers'
+  const [showOfferButton, setShowOfferButton] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    minutes: 8,
+    seconds: 32
+  });
+
+  // Carrega o script da VSL quando o componente monta
+  useEffect(() => {
+    // Carrega o script da VSL
+    loadVSLScript();
+    
     // Timer para mostrar o botão após 2 minutos e 35 segundos (155 segundos)
     const buttonTimer = setupButtonTimer(() => {
       setShowOfferButton(true);
@@ -188,6 +200,8 @@ function App() {
           showOfferButton={showOfferButton}
           onShowOffers={handleShowOffers}
         />
+
+        {/* PROBLEMA E AGITAÇÃO (JOGA SAL NA FERIDA) */}
         <section className="py-8 md:py-16 bg-orange-100">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-orange-800">
@@ -457,14 +471,14 @@ function App() {
                       loading="eager"
                       fetchpriority="high"
                     />
-                    <p className="text-base md:text-lg text-orange-600 mb-2">3 Frasco - Tratamento 3 Meses</p>
+                    <p className="text-base md:text-lg text-orange-600 mb-2">Tratamento 3 Meses</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 197</p>
                     <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 147,00</p>
                     <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 12,25</p>
                     <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold mt-2">
                       25% DE DESCONTO
                     </div>
-                    <p className="text-orange-600 text-xs md:text-sm mt-2"> Estoque reduzido para este lote relâmpago.</p>
+                    <p className="text-orange-600 text-xs md:text-sm mt-2">🌿 Estoque reduzido para este lote relâmpago.</p>
                     <p className="text-orange-600 font-bold text-xs md:text-sm mt-2">+ FRETE GRÁTIS</p>
                   </div>
                   <button 
