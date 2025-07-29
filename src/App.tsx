@@ -254,6 +254,8 @@ function App() {
                   src="https://i.imgur.com/Hsh9jMd.png" 
                   alt="Articulazen - Frasco do Produto" 
                   className="w-full max-w-sm mx-auto rounded-lg shadow-2xl"
+                  loading="eager"
+                  fetchpriority="high"
                 />
               </div>
               <div className="w-full md:w-1/2">
@@ -293,6 +295,7 @@ function App() {
                   src="https://i.imgur.com/nCiMbnz.jpeg" 
                   alt="Marisa S. - Depoimento Articulazen" 
                   className="w-80 h-80 md:w-96 md:h-96 rounded-lg shadow-xl object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="w-full lg:w-1/2">
@@ -352,6 +355,7 @@ function App() {
                         src="https://i.imgur.com/IPm7GJh.png" 
                         alt="Depoimentos WhatsApp Grupo VIP Articulazen" 
                         className="w-full h-auto"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -398,11 +402,13 @@ function App() {
                       src="https://i.imgur.com/eobjHnm.png" 
                       alt="1 Frasco Articulazen" 
                       className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 rounded"
+                      loading="lazy"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">1 Frasco - Tratamento 1 Mês</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 127</p>
                     <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 97,00</p>
                     <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 8,08</p>
+                    <p className="text-orange-600 font-bold text-xs md:text-sm mt-2">+ FRETE GRÁTIS</p>
                   </div>
                   <button 
                     onClick={() => handleCheckoutClick("https://pay.kirvano.com/40d3f4fe-7396-4aae-95a7-d55fc1a43c1b")}
@@ -429,6 +435,7 @@ function App() {
                       src="https://i.imgur.com/Mnogy18.png" 
                       alt="3 Frascos Articulazen" 
                       className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 rounded"
+                      loading="lazy"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">Tratamento 3 Meses</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 197</p>
@@ -470,6 +477,7 @@ function App() {
                       src="https://i.imgur.com/PQfnT3P.jpeg" 
                       alt="5 Frascos Articulazen" 
                       className="w-48 md:w-64 mx-auto mb-4 rounded object-contain"
+                      loading="lazy"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">5 Frascos - Tratamento 5 Meses</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 247</p>
