@@ -16,7 +16,7 @@ import {
   X,
 } from 'lucide-react';
 import { VSLSection } from './vsl/VSLSection';
-import { loadVSLScript, setupButtonTimer } from './vsl/vslUtils';
+import { setupButtonTimer } from './vsl/vslUtils';
 
 // Dados para as notificações
 const notifications = [
@@ -35,18 +35,6 @@ const notifications = [
 function App() {
   const [currentNotification, setCurrentNotification] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
-  const [currentPage, setCurrentPage] = useState('landing'); // 'landing' ou 'offers'
-  const [showOfferButton, setShowOfferButton] = useState(false);
-  const [timeLeft, setTimeLeft] = useState({
-    minutes: 8,
-    seconds: 32
-  });
-
-  // Carrega o script da VSL quando o componente monta
-  useEffect(() => {
-    // Carrega o script da VSL
-    loadVSLScript();
-    
     // Timer para mostrar o botão após 2 minutos e 35 segundos (155 segundos)
     const buttonTimer = setupButtonTimer(() => {
       setShowOfferButton(true);
@@ -200,8 +188,6 @@ function App() {
           showOfferButton={showOfferButton}
           onShowOffers={handleShowOffers}
         />
-
-        {/* PROBLEMA E AGITAÇÃO (JOGA SAL NA FERIDA) */}
         <section className="py-8 md:py-16 bg-orange-100">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-orange-800">
