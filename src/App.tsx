@@ -295,7 +295,8 @@ function App() {
                   src="https://i.imgur.com/nCiMbnz.jpeg" 
                   alt="Marisa S. - Depoimento Articulazen" 
                   className="w-80 h-80 md:w-96 md:h-96 rounded-lg shadow-xl object-cover"
-                  loading="lazy"
+                  loading="eager"
+                  fetchpriority="high"
                 />
               </div>
               <div className="w-full lg:w-1/2">
@@ -355,7 +356,8 @@ function App() {
                         src="https://i.imgur.com/IPm7GJh.png" 
                         alt="Depoimentos WhatsApp Grupo VIP Articulazen" 
                         className="w-full h-auto"
-                        loading="lazy"
+                        loading="eager"
+                        fetchpriority="high"
                       />
                     </div>
                   </div>
@@ -396,13 +398,29 @@ function App() {
               <div className="grid gap-6 md:gap-8 mb-8 md:mb-12">
                 {/* Combo 1 */}
                 <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 border-2 border-orange-200 hover:shadow-xl transition-shadow">
+                  {/* CONTADOR REGRESSIVO */}
+                  <div className="bg-red-600 text-white text-center py-2 md:py-3 rounded-t-lg -mx-4 md:-mx-8 -mt-4 md:-mt-8 mb-4 md:mb-6">
+                    <p className="text-xs md:text-sm font-bold mb-1">⚡ OFERTA RELÂMPAGO ACABA EM:</p>
+                    <div className="flex justify-center items-center gap-2">
+                      <div className="bg-black bg-opacity-30 px-2 md:px-3 py-1 rounded">
+                        <span className="text-lg md:text-2xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                      </div>
+                      <span className="text-lg md:text-2xl font-bold">:</span>
+                      <div className="bg-black bg-opacity-30 px-2 md:px-3 py-1 rounded">
+                        <span className="text-lg md:text-2xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                      </div>
+                    </div>
+                    <p className="text-xs md:text-sm mt-1">MINUTOS : SEGUNDOS</p>
+                  </div>
+                  
                   <h3 className="text-xl md:text-2xl font-bold text-center mb-4 text-orange-800">EXPERIMENTE</h3>
                   <div className="text-center mb-6">
                     <img 
                       src="https://i.imgur.com/eobjHnm.png" 
                       alt="1 Frasco Articulazen" 
                       className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 rounded"
-                      loading="lazy"
+                      loading="eager"
+                      fetchpriority="high"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">1 Frasco - Tratamento 1 Mês</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 127</p>
@@ -420,6 +438,21 @@ function App() {
 
                 {/* Combo 2 - MAIS VENDIDO */}
                 <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 border-4 border-orange-600 hover:shadow-xl transition-shadow relative">
+                  {/* CONTADOR REGRESSIVO */}
+                  <div className="bg-red-600 text-white text-center py-2 md:py-3 rounded-t-lg -mx-4 md:-mx-8 -mt-4 md:-mt-8 mb-4 md:mb-6">
+                    <p className="text-xs md:text-sm font-bold mb-1">⚡ OFERTA RELÂMPAGO ACABA EM:</p>
+                    <div className="flex justify-center items-center gap-2">
+                      <div className="bg-black bg-opacity-30 px-2 md:px-3 py-1 rounded">
+                        <span className="text-lg md:text-2xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                      </div>
+                      <span className="text-lg md:text-2xl font-bold">:</span>
+                      <div className="bg-black bg-opacity-30 px-2 md:px-3 py-1 rounded">
+                        <span className="text-lg md:text-2xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                      </div>
+                    </div>
+                    <p className="text-xs md:text-sm mt-1">MINUTOS : SEGUNDOS</p>
+                  </div>
+                  
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full font-black text-base md:text-lg shadow-lg border-2 border-white">
                     ⭐ MAIS POPULAR ⭐
                   </div>
@@ -435,7 +468,8 @@ function App() {
                       src="https://i.imgur.com/Mnogy18.png" 
                       alt="3 Frascos Articulazen" 
                       className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 rounded"
-                      loading="lazy"
+                      loading="eager"
+                      fetchpriority="high"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">Tratamento 3 Meses</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 197</p>
@@ -444,6 +478,7 @@ function App() {
                     <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold mt-2">
                       25% DE DESCONTO
                     </div>
+                    <p className="text-orange-600 text-xs md:text-sm mt-2">🌿 Estoque reduzido para este lote relâmpago.</p>
                     <p className="text-orange-600 font-bold text-xs md:text-sm mt-2">+ FRETE GRÁTIS</p>
                   </div>
                   <button 
@@ -477,7 +512,8 @@ function App() {
                       src="https://i.imgur.com/PQfnT3P.jpeg" 
                       alt="5 Frascos Articulazen" 
                       className="w-48 md:w-64 mx-auto mb-4 rounded object-contain"
-                      loading="lazy"
+                      loading="eager"
+                      fetchpriority="high"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">5 Frascos - Tratamento 5 Meses</p>
                     <p className="text-sm text-gray-500 line-through">De R$ 247</p>
