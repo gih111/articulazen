@@ -478,7 +478,7 @@ function App() {
                     <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold mt-2">
                       25% DE DESCONTO
                     </div>
-                    <p className="text-orange-600 text-xs md:text-sm mt-2">🌿 Estoque reduzido para este lote relâmpago.</p>
+                    <p className="text-orange-600 text-xs md:text-sm mt-2"> Estoque reduzido para este lote relâmpago.</p>
                     <p className="text-orange-600 font-bold text-xs md:text-sm mt-2">+ FRETE GRÁTIS</p>
                   </div>
                   <button 
