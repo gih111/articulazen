@@ -373,11 +373,21 @@ function App() {
           {/* OFERTA (A HORA DE PASSAR O CARTÃO) */}
           <section className="py-8 md:py-16 bg-gradient-to-br from-orange-600 to-orange-500 text-white">
             <div className="max-w-6xl mx-auto px-4">
+              {/* COPY DA OFERTA RELÂMPAGO */}
+              <div className="text-center mb-8 md:mb-12 bg-yellow-400 text-orange-900 py-4 md:py-6 rounded-lg mx-4 md:mx-0">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-black mb-2 md:mb-4">
+                  ⚡ Oferta Relâmpago Ativada!
+                </h3>
+                <p className="text-base md:text-lg font-bold">
+                  Você destravou uma condição secreta com até 60% de desconto. Mas atenção: essa oferta está no ar por tempo limitadíssimo!
+                </p>
+              </div>
+              
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2 md:mb-4 text-white">
                 ESCOLHA O SEU COMBO DA LIBERDADE
               </h2>
               <p className="text-lg md:text-xl text-center mb-8 md:mb-12 text-orange-100 font-semibold">
-                DESCONTO DE LANÇAMENTO DE ATÉ 60% HOJE!
+                ⚡ OFERTA RELÂMPAGO COM ATÉ 60% DE DESCONTO! ⚡
               </p>
               <div className="grid gap-6 md:gap-8 mb-8 md:mb-12">
                 {/* Combo 1 */}
@@ -390,15 +400,15 @@ function App() {
                       className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 rounded"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">1 Frasco - Tratamento 1 Mês</p>
-                    <p className="text-sm text-gray-500 line-through">De R$ 197</p>
-                    <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 127,00</p>
-                    <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 10,58</p>
+                    <p className="text-sm text-gray-500 line-through">De R$ 127</p>
+                    <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 97,00</p>
+                    <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 8,08</p>
                   </div>
                   <button 
                     onClick={() => handleCheckoutClick("https://pay.kirvano.com/40d3f4fe-7396-4aae-95a7-d55fc1a43c1b")}
                     className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 md:py-4 px-4 md:px-6 rounded-lg text-base md:text-lg transition-colors"
                   >
-                    COMPRAR AGORA
+                    ⚡ QUERO MINHA OFERTA RELÂMPAGO!
                   </button>
                 </div>
 
@@ -409,7 +419,7 @@ function App() {
                   </div>
                   <div className="absolute -top-2 -right-2 bg-yellow-400 text-orange-800 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center font-black text-xs md:text-sm shadow-lg border-2 border-white transform rotate-12">
                     <div className="text-center">
-                      <div>48%</div>
+                      <div>25%</div>
                       <div>OFF</div>
                     </div>
                   </div>
@@ -421,11 +431,11 @@ function App() {
                       className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 rounded"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">Tratamento 3 Meses</p>
-                    <p className="text-sm text-gray-500 line-through">De R$ 381</p>
-                    <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 197,00</p>
-                    <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 16,42</p>
+                    <p className="text-sm text-gray-500 line-through">De R$ 197</p>
+                    <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 147,00</p>
+                    <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 12,25</p>
                     <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold mt-2">
-                      48% DE DESCONTO
+                      25% DE DESCONTO
                     </div>
                     <p className="text-orange-600 font-bold text-xs md:text-sm mt-2">+ FRETE GRÁTIS</p>
                   </div>
@@ -433,7 +443,7 @@ function App() {
                     onClick={() => handleCheckoutClick("https://pay.kirvano.com/da6035a3-e8fc-42f2-adc9-03da00cda953")}
                     className="w-full bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 md:py-4 px-4 md:px-6 rounded-lg text-base md:text-lg transition-colors"
                   >
-                    🚀 QUERO MINHA LIBERDADE DAS DORES!
+                    ⚡ LIBERAR DESCONTO AGORA!
                   </button>
                 </div>
 
@@ -441,7 +451,7 @@ function App() {
                 <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 border-2 border-orange-200 hover:shadow-xl transition-shadow">
                   {/* CONTADOR REGRESSIVO */}
                   <div className="bg-red-600 text-white text-center py-2 md:py-3 rounded-t-lg -mx-4 md:-mx-8 -mt-4 md:-mt-8 mb-4 md:mb-6">
-                    <p className="text-xs md:text-sm font-bold mb-1">⚠️ OFERTA ESPECIAL ACABA EM:</p>
+                    <p className="text-xs md:text-sm font-bold mb-1">⚡ OFERTA RELÂMPAGO ACABA EM:</p>
                     <div className="flex justify-center items-center gap-2">
                       <div className="bg-black bg-opacity-30 px-2 md:px-3 py-1 rounded">
                         <span className="text-lg md:text-2xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
@@ -462,11 +472,11 @@ function App() {
                       className="w-48 md:w-64 mx-auto mb-4 rounded object-contain"
                     />
                     <p className="text-base md:text-lg text-orange-600 mb-2">5 Frascos - Tratamento 5 Meses</p>
-                    <p className="text-sm text-gray-500 line-through">De R$ 635</p>
-                    <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 247,00</p>
-                    <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 20,58</p>
+                    <p className="text-sm text-gray-500 line-through">De R$ 247</p>
+                    <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">R$ 197,00</p>
+                    <p className="text-xs md:text-sm text-orange-600">ou 12x de R$ 16,42</p>
                     <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs md:text-sm font-bold mt-2">
-                      61% DE DESCONTO
+                      20% DE DESCONTO
                     </div>
                     <p className="text-orange-600 font-bold text-xs md:text-sm mt-2">+ FRETE GRÁTIS</p>
                   </div>
@@ -474,7 +484,7 @@ function App() {
                     onClick={() => handleCheckoutClick("https://pay.kirvano.com/5ae4aac0-c51e-4df0-b1c6-0b1157f18cae")}
                     className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 md:py-4 px-4 md:px-6 rounded-lg text-base md:text-lg transition-colors animate-pulse"
                   >
-                    🔥 GARANTIR DESCONTO ANTES QUE ACABE
+                    ⚡ GARANTIR MEUS FRASCOS COM 60% OFF
                   </button>
                 </div>
               </div>
