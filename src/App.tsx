@@ -35,6 +35,11 @@ const notifications = [
 function App() {
   const [currentNotification, setCurrentNotification] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
+  const [showOfferButton, setShowOfferButton] = useState(false);
+  const [currentPage, setCurrentPage] = useState('landing');
+  const [timeLeft, setTimeLeft] = useState({ minutes: 8, seconds: 32 });
+
+  useEffect(() => {
     // Timer para mostrar o botão após 2 minutos e 35 segundos (155 segundos)
     const buttonTimer = setupButtonTimer(() => {
       setShowOfferButton(true);
