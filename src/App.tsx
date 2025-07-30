@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { VSLSection } from './vsl/VSLSection';
 import { loadVSLScript, setupButtonTimer } from './vsl/vslUtils';
+import { Quiz } from './components/Quiz';
 
 // Dados para as notificações
 const notifications = [
@@ -35,7 +36,7 @@ const notifications = [
 function App() {
   const [currentNotification, setCurrentNotification] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
-  const [currentPage, setCurrentPage] = useState('landing'); // 'landing' ou 'offers'
+  const [currentPage, setCurrentPage] = useState('quiz'); // 'quiz', 'landing' ou 'offers'
   const [showOfferButton, setShowOfferButton] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     minutes: 8,
@@ -143,6 +144,11 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleQuizComplete = () => {
+    setCurrentPage('landing');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* NOTIFICAÇÃO DE COMPRA */}
@@ -169,6 +175,11 @@ function App() {
             </button>
           </div>
         </div>
+      )}
+
+      {/* PÁGINA DO QUIZ */}
+      {currentPage === 'quiz' && (
+        <Quiz onComplete={handleQuizComplete} />
       )}
 
       {/* PÁGINA DE LANDING */}
