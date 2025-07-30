@@ -45,17 +45,32 @@ function App() {
 
   // Carrega o script da VSL quando o componente monta
   useEffect(() => {
-    // Carrega o script da VSL
-    loadVSLScript();
-    
-    // Timer para mostrar o botão após 2 minutos e 35 segundos (155 segundos)
-    const buttonTimer = setupButtonTimer(() => {
-      setShowOfferButton(true);
-    });
-    
-    // Cleanup do timer
-    return () => clearTimeout(buttonTimer);
+    // Só carrega o script da VSL quando estiver na página landing
+    if (currentPage === 'landing') {
+      loadVSLScript();
+      
+      // Timer para mostrar o botão após 2 minutos e 35 segundos (155 segundos)
+      const buttonTimer = setupButtonTimer(() => {
+        setShowOfferButton(true);
+      });
+      
+      // Cleanup do timer
+      return () => clearTimeout(buttonTimer);
+    }
   }, []);
+
+  // Carrega VSL quando muda para landing page
+  useEffect(() => {
+    if (currentPage === 'landing') {
+      loadVSLScript();
+      
+      const buttonTimer = setupButtonTimer(() => {
+        setShowOfferButton(true);
+      });
+      
+      return () => clearTimeout(buttonTimer);
+    }
+  }, [currentPage]);
   
   // Despachante de UTM v1.0 - por Lek do Black
   const handleCheckoutClick = (checkoutUrl: string) => {
@@ -93,27 +108,33 @@ function App() {
   };
 
   useEffect(() => {
-    const showNextNotification = () => {
-      // Mostra a notificação
-      setShowNotification(true);
-      
-      // Esconde após 8 segundos
-      setTimeout(() => {
-        setShowNotification(false);
+    // Só mostra notificações na página landing ou offers
+    if (currentPage === 'landing' || currentPage === 'offers') {
+      const showNextNotification = () => {
+        // Mostra a notificação
+        setShowNotification(true);
         
-        // Após 25 segundos escondida, muda para a próxima e mostra novamente
+        // Esconde após 8 segundos
         setTimeout(() => {
-          setCurrentNotification((prev) => (prev + 1) % notifications.length);
-          showNextNotification();
-        }, 25000);
-      }, 8000);
-    };
+          setShowNotification(false);
+          
+          // Após 25 segundos escondida, muda para a próxima e mostra novamente
+          setTimeout(() => {
+            setCurrentNotification((prev) => (prev + 1) % notifications.length);
+            showNextNotification();
+          }, 25000);
+        }, 8000);
+      };
 
-    // Inicia o ciclo
-    showNextNotification();
+      // Inicia o ciclo
+      showNextNotification();
+    } else {
+      // Esconde notificações em outras páginas
+      setShowNotification(false);
+    }
 
     // Não precisa de cleanup pois é recursivo
-  }, []);
+  }, [currentPage]);
 
   // Contador regressivo
   useEffect(() => {
@@ -152,7 +173,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* NOTIFICAÇÃO DE COMPRA */}
-      {showNotification && (
+      {showNotification && (currentPage === 'landing' || currentPage === 'offers') && (
         <div className="fixed bottom-4 left-4 bg-green-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm animate-slide-in">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
