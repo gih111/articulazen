@@ -246,3 +246,5 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete }) => {
     </div>
   );
 };
+
+export { Quiz }
